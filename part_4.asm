@@ -11,7 +11,6 @@ section .data ;для объявления неинициализированн�
 section .text
     global main
         main:
-        
         mov rbp, rsp; for correct debugging     fld dword [x]
         PRINT_STRING "Enter y: "
         READ_FLOAT [y]
@@ -19,6 +18,7 @@ section .text
         PRINT_STRING "Enter x: "
         READ_FLOAT [x]
         NEWLINE
+        
         fld dword[h]
         fsin
         fld dword[x]
@@ -26,7 +26,7 @@ section .text
         fld dword[gamma]
         fsub 
         fld dword[y]
-        fcomi st2
+        fcomi st1
         ja yes
         jbe no
         
